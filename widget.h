@@ -36,14 +36,14 @@ private:
     QVector<int> newGen;
     QVector<int> parent;
     QVector<int> rank;
-    int numPlaces;
-    bool isFinish;
+    int numPlaces; //장소의 수
+    bool isFinish; //완료 여부
     QVector<int> bestGen;
     int generation;
     int distance;
     const int MAX_HEAP_SIZE = 100;
-    int timerIntervalMs = 500;
     const int MAX_WEIGHT = 100000;
+    int timerIntervalMs = 500;
 
     int heapSize;
     QVector<int> heap;

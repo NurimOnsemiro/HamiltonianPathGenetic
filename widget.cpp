@@ -21,6 +21,7 @@ Widget::Widget(QWidget *parent) :
     numPlaces=100;
 
     {
+        //INFO: config.json으로부터 설정 정보를 읽어들임
         QFile file;
         QString data;
         file.setFileName("./config.json");
@@ -86,6 +87,8 @@ void Widget::initWeight()
             }
         }
     }
+
+    //INFO: 대칭 작업
     for(int i=0;i<numPlaces;i++)
     {
         for(int j=0;j<numPlaces;j++)
@@ -188,13 +191,9 @@ void Widget::generate()
     if(isFinish==false)
         return;
     isFinish=false;
-   // qDebug("1");
     goodness();
-   // qDebug("2");
     ranking();
-   // qDebug("3");
     crossGen();
-    //qDebug("4");
     mutation();
     generation++;
     update();
@@ -227,7 +226,6 @@ void Widget::initCityPos()
     for(int i=0;i<numPlaces;i++)
     {
         cityPos.append(QPoint(qrand()%490,qrand()%490));
-        //qDebug()<<cityPos[i].x()<<","<<cityPos[i].y();
     }
 }
 
@@ -277,7 +275,6 @@ void Widget::goodness()
             hap+=cityWeight[gen[i*numPlaces+j]*numPlaces+dst];
         }
         score[i]=hap;
-        //qDebug()<<"score"<<score[i];
     }
 }
 
