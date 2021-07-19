@@ -4,3 +4,4 @@
 # 개발환경
 * Qt : v5.15.0 MinGW 32-bit
 * MinGW : v8.1.0
+* Qt Creator : v4.12.4
